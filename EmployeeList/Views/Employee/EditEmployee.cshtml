@@ -1,0 +1,51 @@
+﻿@*
+
+*@
+@{
+}
+@model EmployeeList.Models.Entities.Employees;
+
+
+    <h1>Edit Employee</h1>
+
+    @if (Model is null){
+       <p>Employee not Found</p>
+    }else{
+    <form method="post">
+    <div class="margin-3">
+        <label class="form-label">Employee ID: </label>
+        <input type="text" class="form-control" asp-for="Id" readonly />
+    </div>
+
+
+    <div class="margin-3">
+        <label class="form-label">Employee name: </label>
+        <input type="text" class="form-control" asp-for="Name" />
+    </div>
+
+    <div class="margin-3">
+        <label class="form-label">Employee Email: </label>
+        <input type="email" class="form-control" asp-for="Email" />
+
+    </div>
+    <div class="margin-3">
+        <label class="form-label">Employee Phone Number : </label>
+        <input type="text" class="form-control" asp-for="PhoneNumber" />
+
+    </div>
+
+    <div class="mt-3">
+        <input type="checkbox" class="form-check" id="e mployed" asp-for="Employed" />
+        <label class="form-check-label" for="employed">Employed</label>
+    </div>
+
+    <div class="margin-3">
+        <button type="submit" class="btn btn-primary">Update</button>
+         <button type="submit" class="btn btn-danger ms-3"
+         asp-action="DeleteEmployee"
+        asp-controller="Employee"
+         >Delete</button>
+    </div>
+</form>
+}
+
